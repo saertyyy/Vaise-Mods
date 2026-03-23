@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Mods Vault</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nosifer&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="#horror" class="nav-link side">Хоррор</a>
+            <a href="#home" class="nav-link main-link">ГЛАВНАЯ</a>
+            <a href="#visual" class="nav-link side">Визуал</a>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>MODS VAULT</h1>
+            <p>Добро пожаловать. Здесь собраны все модификации, которые я использую в своих видео. Всё проверено и разложено по категориям для вашего удобства.</p>
+            <div class="scroll-hint">Используй меню выше или листай вниз ↓</div>
+        </div>
+    </section>
+
+    <div class="container">
+        
+        <section id="horror">
+            <h2 class="section-title horror-text glitch" data-text="HORROR SELECTION">HORROR SELECTION</h2>
+            <div class="mod-grid">
+                <div class="mod-card visual-border">
+                    <div class="card-img" style="background-image: url('img/placeholder-visual.jpg');"></div>
+                    <div class="card-content">
+                        <h3>Название мода</h3>
+                        <p>Описание графических изменений или шейдеров.</p>
+                        <div class="tags"><span class="tag">Версия</span><span class="tag">Iris/Optifine</span></div>
+                        <a href="#" class="btn btn-visual">Скачать</a>
+                    </div>
+                </div>
+
+            </div> </section>
+
+    </div> <footer>
+        <p>&copy; 2026 Твой Канал. Сайт обновляется автором вручную.</p>
+    </footer>
+
+    <script>
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.mod-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+
+</body>
+</html>
+                <div class="mod-card horror-border">
+                    <div class="card-img" style="background-image: url('img/placeholder-horror.jpg');"></div>
+                    <div class="card-content">
+                        <h3>Название мода</h3>
+                        <p>Краткое описание мода и в каком видео он засветился.</p>
+                        <div class="tags"><span class="tag">Версия</span><span class="tag">Forge/Fabric</span></div>
+                        <a href="#" class="btn btn-horror">Скачать</a>
+                    </div>
+                </div>
+                </div>
+        </section>
+
+        <hr class="divider">
+
+        <section id="visual">
+            <h2 class="section-title visual-text">VISUAL & GRAPHICS</h2>
+            <div class="mod-grid">
