@@ -12,11 +12,12 @@
     <div class="noise-overlay"></div>
 
     <nav class="navbar">
-        <div class="nav-links">
-            <a href="#horror" class="nav-item color-horror">DATA_HORROR</a>
-            <a href="#home" class="nav-item logo">MODS_VAULT</a>
+       <div class="nav-links">
+           <a href="#horror" class="nav-item color-horror">DATA_HORROR</a>
             <a href="#visual" class="nav-item color-visual">DATA_VISUAL</a>
-        </div>
+             <a href="#home" class="nav-item logo">MODS_VAULT</a>
+             <a href="#shaders" class="nav-item color-shaders">DATA_SHADERS</a>
+       </div>
     </nav>
 
     <header id="home" class="hero">
@@ -59,22 +60,25 @@
                 </div>
         </section>
 
-        <section id="visual" class="mod-section">
+        <section id="shaders" class="mod-section">
             <div class="section-header">
-                <h2 class="visual-glow">VISUAL_CORE</h2>
-                <div class="line blue-line"></div>
+                <h2 class="shaders-glow">SHADERS_CORE</h2>
+                <div class="line green-line"></div>
             </div>
 
             <div class="mod-grid">
-                <div class="mod-card visual">
-                    <div class="card-image" style="background-image: url('img/v1.jpg');"></div>
+                <div class="mod-card shaders">
+                    <div class="card-image" style="background-image: url('img/insanity.jpg');"></div>
                     <div class="card-info">
-                        <span class="mod-id">#ID_V01</span>
-                        <h3>GRAPHICS_MOD</h3>
-                        <p>Улучшение освещения и постобработки. Максимальное погружение.</p>
+                        <span class="mod-id">#ID_S01</span>
+                        <h3>Insanity Shader</h3>
+                        <p>Идеальный шейдер для хоррор-сборок. Мрачная атмосфера, реалистичный туман и гнетущие тени. Настоящее безумие.</p>
                         <div class="card-footer">
-                            <span class="version">SHADER</span>
-                            <a href="#" class="dl-link">GET_DATA</a>
+                            <span class="version">Any // Iris</span>
+                            <div class="stats" style="font-family: 'Syncopate', sans-serif; font-size: 0.7rem; color: var(--green); opacity: 0.8;">
+                                <span id="count-insanity">0</span> ⬇
+                            </div>
+                            <a href="https://modrinth.com/shader/insanity-shader" class="dl-link" target="_blank" onclick="updateCount('insanity')">GET_DATA // Modrinth</a>
                         </div>
                     </div>
                 </div>

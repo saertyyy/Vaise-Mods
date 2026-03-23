@@ -2,11 +2,11 @@
     --bg: #050505;
     --red: #ff003c;
     --blue: #00f2ff;
+    --green: #00ff88; 
     --text: #ffffff;
     --font-main: 'Oswald', sans-serif;
     --font-accent: 'Syncopate', sans-serif;
 }
-
 * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
 body {
@@ -88,4 +88,31 @@ body {
     position: fixed; bottom: 40px; right: 40px; background: transparent; 
     border: 1px solid #333; color: #fff; padding: 10px; cursor: pointer; display: none;
     font-family: var(--font-accent); font-size: 0.6rem;
+}/* Цвет для ссылки в навигации */
+.color-shaders:hover { 
+    color: var(--green); 
+    text-shadow: 0 0 10px var(--green); 
+}
+
+/* Линия под заголовком */
+.green-line { 
+    background: var(--green); 
+    box-shadow: 0 0 10px var(--green); 
+}
+
+/* Свечение текста заголовка */
+.shaders-glow { 
+    color: var(--green); 
+    text-shadow: 0 0 15px rgba(0, 255, 136, 0.3); 
+}/* Наведение на карточку шейдеров */
+.shaders:hover { 
+    border-color: var(--green); 
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.1); 
+}
+
+/* Кнопка внутри карточки шейдеров */
+.shaders:hover .dl-link { 
+    background: var(--green); 
+    border-color: var(--green); 
+    color: #000; /* Черный текст на зеленом фоне при наведении */
 }

@@ -61,4 +61,8 @@ async function getInitialCount(modId) {
 window.addEventListener('load', () => {
     typeWriter();
     getInitialCount('split-self');
+});window.addEventListener('load', () => {
+    typeWriter();
+    getInitialCount('split-self'); // Твой хоррор мод
+    getInitialCount('insanity');   // Твой новый шейдер
 });
