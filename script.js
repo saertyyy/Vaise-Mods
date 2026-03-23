@@ -75,4 +75,22 @@ window.addEventListener('load', () => {
 });window.addEventListener('mousemove', e => {
     document.body.style.setProperty('--x', e.clientX + 'px');
     document.body.style.setProperty('--y', e.clientY + 'px');
+});// === ЖИВОЕ ВРЕМЯ ===
+function updateSystemTime() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString('ru-RU', { hour12: false });
+    const dateString = now.toLocaleDateString('ru-RU').replace(/\//g, '.');
+    
+    const timeElement = document.getElementById('system-time');
+    if (timeElement) {
+        timeElement.innerText = `SYSTEM_TIME: ${timeString} [${dateString}]`;
+    }
+}
+setInterval(updateSystemTime, 1000);
+updateSystemTime(); // Запуск сразу
+
+// === СЛЕДЯЩЕЕ СВЕЧЕНИЕ КУРСОРA ===
+window.addEventListener('mousemove', e => {
+    document.documentElement.style.setProperty('--mouse-x', e.clientX + 'px');
+    document.documentElement.style.setProperty('--mouse-y', e.clientY + 'px');
 });
