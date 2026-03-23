@@ -350,8 +350,34 @@ body {
 }
 
 /* Сделаем курсор в стиле терминала */
+/* Скрываем стандартный курсор полностью */
 * {
-    cursor: crosshair !important;
+    cursor: none !important;
+}
+
+/* Стили нашего технологичного прицела */
+#custom-cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #00f2ff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 10000;
+    /* Плавный поворот и масштабирование */
+    transition: transform 0.15s ease-out, border-color 0.2s, box-shadow 0.2s;
+    /* Рисуем перекрестие внутри */
+    background: 
+        linear-gradient(to right, #00f2ff 2px, transparent 2px) 50% 50% / 100% 2px no-repeat,
+        linear-gradient(to bottom, #00f2ff 2px, transparent 2px) 50% 50% / 2px 100% no-repeat;
+}
+
+/* Состояние при наведении на кнопки (вращение на 45 градусов) */
+#custom-cursor.active {
+    transform: scale(1.4) rotate(45deg);
+    border-color: #ff0000;
+    box-shadow: 0 0 15px #ff0000;
 }
 
 /* Эффект для ссылок при наведении */

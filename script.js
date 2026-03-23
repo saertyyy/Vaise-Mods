@@ -93,4 +93,20 @@ updateSystemTime(); // Запуск сразу
 window.addEventListener('mousemove', e => {
     document.documentElement.style.setProperty('--mouse-x', e.clientX + 'px');
     document.documentElement.style.setProperty('--mouse-y', e.clientY + 'px');
-});
+});const cursor = document.getElementById('custom-cursor');
+
+if (cursor) {
+    // 1. Привязываем квадрат к мышке
+    window.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX - 10 + 'px'; // 10 — это половина ширины прицела
+        cursor.style.top = e.clientY - 10 + 'px';
+    });
+
+    // 2. Включаем вращение при наведении на кнопки и ссылки
+    const targets = document.querySelectorAll('a, button, .dl-link, .nav-item');
+    
+    targets.forEach(t => {
+        t.addEventListener('mouseenter', () => cursor.classList.add('active'));
+        t.addEventListener('mouseleave', () => cursor.classList.remove('active'));
+    });
+}
