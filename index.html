@@ -11,9 +11,7 @@
 </head>
 
 <body>
-
     <div class="noise-overlay"></div>
-
     <nav class="navbar">
         <div class="nav-links">
             <a href="#horror" class="nav-item color-horror">DATA_HORROR</a>
@@ -22,7 +20,6 @@
             <a href="#shaders" class="nav-item color-shaders">DATA_SHADERS</a>
         </div>
     </nav>
-
     <header id="home" class="hero">
         <div class="hero-inner">
             <h1 class="main-title" id="typewriter"></h1>
@@ -33,7 +30,6 @@
             </div>
         </div>
     </header>
-
     <main class="content-wrapper">
 
         <section id="horror" class="mod-section">
@@ -41,21 +37,16 @@
                 <h2 class="glitch-text" data-text="ERROR_HORROR">ERROR_HORROR</h2>
                 <div class="line red-line"></div>
             </div>
-
             <div class="mod-grid">
                 <div class="mod-card horror">
                     <div class="card-image" style="background-image: url('./horror.jpg');"></div>
                     <div class="card-info">
                         <span class="mod-id">#ID_001</span>
                         <h3>Split Self</h3>
-                        <p>Ваше сознание разделяется. Жуткая копия вашего персонажа начинает преследовать вас, повторяя ваши движения и выжидая момент для удара.</p>
+                        <p>Ваше сознание разделяется. Жуткая копия вашего персонажа начинает преследовать вас.</p>
                         <div class="card-footer">
                             <span class="version">1.21.1 // Fabric</span>
-                            <div class="stats" style="font-family: 'Syncopate', sans-serif; font-size: 0.7rem; color: var(--red); opacity: 0.8;">
-                                <span id="count-split-self">0</span> ⬇
-                            </div>
-                            <a href="https://modrinth.com/mod/split-self" class="dl-link" target="_blank"
-                                onclick="updateCount('split-self')">GET_DATA // Modrinth</a>
+                            <a href="https://modrinth.com/mod/split-self" class="dl-link" target="_blank">GET_DATA</a>
                         </div>
                     </div>
                 </div>
@@ -67,17 +58,38 @@
                 <h2 class="visual-glow">VISUAL_CORE</h2>
                 <div class="line blue-line"></div>
             </div>
-
             <div class="mod-grid">
                 <div class="mod-card visual">
                     <div class="card-image" style="background-image: url('./v1.jpg');"></div>
                     <div class="card-info">
                         <span class="mod-id">#ID_V01</span>
-                        <h3>GRAPHICS_MOD</h3>
-                        <p>Улучшение освещения и постобработки. Максимальное погружение в игровой процесс.</p>
+                        <h3>GRAPHICS_CORE</h3>
+                        <p>Улучшение визуальных эффектов и частиц.</p>
                         <div class="card-footer">
-                            <span class="version">Iris / Optifine</span>
+                            <span class="version">1.20.x+</span>
                             <a href="#" class="dl-link">GET_DATA</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="shaders" class="mod-section">
+            <div class="section-header">
+                <h2 class="shaders-glow">SHADERS_CORE</h2>
+                <div class="line green-line"></div>
+            </div>
+            <div class="mod-grid">
+                <div class="mod-card shaders">
+                    <div class="card-image" style="background-image: url('./shady.jpg');"></div>
+                    <div class="card-info">
+                        <span class="mod-id">#ID_S01</span>
+                        <h3>Insanity Shader</h3>
+                        <p>Мрачная атмосфера и реалистичный туман.</p>
+                        <div class="card-footer">
+                            <span class="version">Iris // Optifine</span>
+                            <a href="https://modrinth.com/shader/insanity-shader" class="dl-link"
+                                target="_blank">GET_DATA</a>
                         </div>
                     </div>
                 </div>
@@ -96,10 +108,12 @@
                     <div class="card-info">
                         <span class="mod-id">#ID_S01</span>
                         <h3>Insanity Shader</h3>
-                        <p>Идеальный шейдер для хоррор-сборок. Мрачная атмосфера, реалистичный туман и гнетущие тени.</p>
+                        <p>Идеальный шейдер для хоррор-сборок. Мрачная атмосфера, реалистичный туман и гнетущие тени.
+                        </p>
                         <div class="card-footer">
-                            <span class="version">Any // Iris</span>
-                            <div class="stats" style="font-family: 'Syncopate', sans-serif; font-size: 0.7rem; color: var(--green); opacity: 0.8;">
+                            <span class="version">Optifine // Iris</span>
+                            <div class="stats"
+                                style="font-family: 'Syncopate', sans-serif; font-size: 0.7rem; color: var(--green); opacity: 0.8;">
                                 <span id="count-insanity">0</span> ⬇
                             </div>
                             <a href="https://modrinth.com/shader/insanity-shader" class="dl-link" target="_blank"
@@ -111,16 +125,13 @@
         </section>
 
     </main>
-
     <footer class="footer">
         <div class="footer-content">
             <p>© 2024 MODS_VAULT // TERMINAL_ACCESS</p>
             <div class="footer-line"></div>
         </div>
     </footer>
-
     <button id="backToTop">UP_SYSTEM</button>
-
     <script src="script.js"></script>
 </body>
 
