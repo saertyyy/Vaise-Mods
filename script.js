@@ -28,7 +28,7 @@ document.querySelectorAll('.nav-item').forEach(anchor => {
 });
 
 // === 2. ЭФФЕКТ ПЕЧАТНОЙ МАШИНКИ ===
-const titleText = "VAULT_01";
+const titleText = "VaiseMods";
 const speed = 150;
 let i = 0;
 
