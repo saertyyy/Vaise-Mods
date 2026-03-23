@@ -113,6 +113,22 @@ body {
     font-family: var(--font-accent);
     font-size: clamp(3rem, 10vw, 6rem);
     letter-spacing: -2px;
+    /* Добавляем новый цвет и свечение */
+    color: #00f2ff; 
+    text-shadow: 
+        0 0 10px rgba(0, 242, 255, 0.7), 
+        0 0 20px rgba(0, 242, 255, 0.4);
+    transition: 0.3s;
+    position: relative;
+    z-index: 2;
+}
+
+/* Эффект при наведении для красоты */
+.main-title:hover {
+    color: #fff;
+    text-shadow: 
+        0 0 15px #00f2ff, 
+        0 0 30px #00f2ff;
 }
 
 .subtitle {
