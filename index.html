@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MODS VAULT // АРХИВ</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Oswald:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Oswald:wght@300;500&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
 
     <div class="noise-overlay"></div>
 
     <nav class="navbar">
-       <div class="nav-links">
-           <a href="#horror" class="nav-item color-horror">DATA_HORROR</a>
+        <div class="nav-links">
+            <a href="#horror" class="nav-item color-horror">DATA_HORROR</a>
             <a href="#visual" class="nav-item color-visual">DATA_VISUAL</a>
-             <a href="#home" class="nav-item logo">MODS_VAULT</a>
-             <a href="#shaders" class="nav-item color-shaders">DATA_SHADERS</a>
-       </div>
+            <a href="#home" class="nav-item logo">MODS_VAULT</a>
+            <a href="#shaders" class="nav-item color-shaders">DATA_SHADERS</a>
+        </div>
     </nav>
 
     <header id="home" class="hero">
         <div class="hero-inner">
-           <h1 class="main-title" id="typewriter"></h1>
+            <h1 class="main-title" id="typewriter"></h1>
             <p class="subtitle">Сайт для скачивания модов, которые я использую в своих видео.</p>
             <div class="status-bar">
                 <span class="status-node">SYSTEM: ONLINE</span>
@@ -37,27 +40,54 @@
                 <h2 class="glitch-text" data-text="ERROR_HORROR">ERROR_HORROR</h2>
                 <div class="line red-line"></div>
             </div>
-            
+
             <div class="mod-grid">
                 <div class="mod-card horror">
                     <div class="card-image" style="background-image: url('img/split-self.jpg');"></div>
                     <div class="card-info">
                         <span class="mod-id">#ID_001</span>
                         <h3>Split Self</h3>
-                        <p>Ваше сознание разделяется. Жуткая копия вашего персонажа начинает преследовать вас, повторяя ваши движения и выжидая момент для удара.</p>
+                        <p>Ваше сознание разделяется. Жуткая копия вашего персонажа начинает преследовать вас, повторяя
+                            ваши движения и выжидая момент для удара.</p>
                         <div class="card-footer">
                             <span class="version">1.21.1 // Fabric</span>
-                            <div class="stats" style="font-family: 'Syncopate', sans-serif; font-size: 0.7rem; color: var(--red); opacity: 0.8;">
+                            <div class="stats"
+                                style="font-family: 'Syncopate', sans-serif; font-size: 0.7rem; color: var(--red); opacity: 0.8;">
                                 <span id="count-split-self">0</span> ⬇
                             </div>
-                            <a href="https://modrinth.com/mod/split-self" class="dl-link" target="_blank" onclick="updateCount('split-self')">GET_DATA // Modrinth</a>
+                            <a href="https://modrinth.com/mod/split-self" class="dl-link" target="_blank"
+                                onclick="updateCount('split-self')">GET_DATA // Modrinth</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        </div>
+        </div>
+        </section>
+
+        </section>
+
+        <section id="visual" class="mod-section">
+            <div class="section-header">
+                <h2 class="visual-glow">VISUAL_CORE</h2>
+                <div class="line blue-line"></div>
+            </div>
+
+            <div class="mod-grid">
+                <div class="mod-card visual">
+                    <div class="card-image" style="background-image: url('img/v1.jpg');"></div>
+                    <div class="card-info">
+                        <span class="mod-id">#ID_V01</span>
+                        <h3>GRAPHICS_MOD</h3>
+                        <p>Улучшение освещения и постобработки. Максимальное погружение в игровой процесс.</p>
+                        <div class="card-footer">
+                            <span class="version">Iris / Optifine</span>
+                            <a href="#" class="dl-link">GET_DATA</a>
+                        </div>
+                    </div>
                 </div>
-                </div>
+            </div>
         </section>
 
         <section id="shaders" class="mod-section">
@@ -72,13 +102,16 @@
                     <div class="card-info">
                         <span class="mod-id">#ID_S01</span>
                         <h3>Insanity Shader</h3>
-                        <p>Идеальный шейдер для хоррор-сборок. Мрачная атмосфера, реалистичный туман и гнетущие тени. Настоящее безумие.</p>
+                        <p>Идеальный шейдер для хоррор-сборок. Мрачная атмосфера, реалистичный туман и гнетущие тени.
+                        </p>
                         <div class="card-footer">
                             <span class="version">Any // Iris</span>
-                            <div class="stats" style="font-family: 'Syncopate', sans-serif; font-size: 0.7rem; color: var(--green); opacity: 0.8;">
+                            <div class="stats"
+                                style="font-family: 'Syncopate', sans-serif; font-size: 0.7rem; color: var(--green); opacity: 0.8;">
                                 <span id="count-insanity">0</span> ⬇
                             </div>
-                            <a href="https://modrinth.com/shader/insanity-shader" class="dl-link" target="_blank" onclick="updateCount('insanity')">GET_DATA // Modrinth</a>
+                            <a href="https://modrinth.com/shader/insanity-shader" class="dl-link" target="_blank"
+                                onclick="updateCount('insanity')">GET_DATA // Modrinth</a>
                         </div>
                     </div>
                 </div>
@@ -91,4 +124,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
