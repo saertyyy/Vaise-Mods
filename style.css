@@ -1,3 +1,11 @@
+* {
+    cursor: crosshair !important;
+}
+
+/* Чтобы на ссылках он менялся или светился */
+a:hover {
+    text-shadow: 0 0 10px #00f2ff;
+}
 :root {
     --bg: #050505;
     --red: #ff003c;
@@ -314,4 +322,14 @@ body {
     font-family: var(--font-accent);
     font-size: 0.6rem;
     z-index: 1001;
+}body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(600px circle at var(--x) var(--y), rgba(0, 242, 255, 0.05), transparent 40%);
+    z-index: 9999;
+    pointer-events: none;
 }
