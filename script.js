@@ -1,4 +1,4 @@
-// Появление кнопки Наверх
+// === 1. НАВИГАЦИЯ И КНОПКА "НАВЕРХ" ===
 const btn = document.getElementById('backToTop');
 
 window.onscroll = () => {
@@ -13,82 +13,63 @@ btn.onclick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
-// Плавная прокрутка для ссылок навигации
+// Плавная прокрутка для ссылок
 document.querySelectorAll('.nav-item').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const href = this.getAttribute('href');
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
     });
-});const NAMESPACE = "my_vault_unique_2026"; 
+});
 
-// Печатная машинка
+// === 2. ЭФФЕКТ ПЕЧАТНОЙ МАШИНКИ ===
 const titleText = "VAULT_01";
 const speed = 150;
 let i = 0;
 
 function typeWriter() {
-    if (i < titleText.length) {
-        document.getElementById("typewriter").innerHTML += titleText.charAt(i);
+    const element = document.getElementById("typewriter");
+    if (element && i < titleText.length) {
+        element.innerHTML += titleText.charAt(i);
         i++;
         setTimeout(typeWriter, speed);
     }
 }
 
-// Счетчик скачиваний
-async function updateCount(modId) {
-    try {
-        await fetch(`https://api.countapi.xyz/hit/${NAMESPACE}/${modId}`);
-    } catch (e) {
-        console.error("Counter error");
-    }
-}
-
-async function getInitialCount(modId) {
-    try {
-        const response = await fetch(`https://api.countapi.xyz/get/${NAMESPACE}/${modId}`);
-        const data = await response.json();
-        if (data.value) {
-            document.getElementById(`count-${modId}`).innerText = data.value;
-        }
-    } catch (e) {
-        console.log("Counter initialized on first click");
-    }
-}
-
-// Запуск при загрузке
-window.addEventListener('load', () => {
-    typeWriter();
-    getInitialCount('split-self');
-});window.addEventListener('load', () => {
-    typeWriter();
-    getInitialCount('split-self'); // Твой хоррор мод
-    getInitialCount('insanity');   // Твой новый шейдер
-});function updateCount(modId) {
-    // Получаем текущее число из памяти браузера (или 0, если это первый раз)
+// === 3. СИСТЕМА СЧЕТЧИКОВ (LOCAL STORAGE) ===
+// Функция для клика по кнопке
+function updateCount(modId) {
     let count = localStorage.getItem('count-' + modId) || 0;
-    
-    // Увеличиваем на 1
     count++;
-    
-    // Сохраняем обратно в память
     localStorage.setItem('count-' + modId, count);
     
-    // Сразу обновляем цифру на экране
     const element = document.getElementById('count-' + modId);
     if (element) {
         element.innerText = count;
     }
 }
 
-// Эта часть кода срабатывает сразу при загрузке страницы
-// Она проверяет память и ставит сохраненные цифры вместо нулей
-window.onload = function() {
-    const mods = ['insanity']; // список ID твоих модов
+// Функция для загрузки цифр при старте
+function loadAllCounts() {
+    // Список всех ID твоих модов (проверь, чтобы они совпадали с id в HTML)
+    const mods = ['camera', 'leaves', 'zoom', 'insanity']; 
+    
     mods.forEach(id => {
         let savedCount = localStorage.getItem('count-' + id) || 0;
         let element = document.getElementById('count-' + id);
-        if (element) element.innerText = savedCount;
+        if (element) {
+            element.innerText = savedCount;
+        }
     });
-};
+}
+
+// === 4. ЕДИНЫЙ ЗАПУСК ПРИ ЗАГРУЗКЕ ===
+window.addEventListener('load', () => {
+    typeWriter();
+    loadAllCounts();
+});
