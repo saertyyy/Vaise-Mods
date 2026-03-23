@@ -65,4 +65,30 @@ window.addEventListener('load', () => {
     typeWriter();
     getInitialCount('split-self'); // Твой хоррор мод
     getInitialCount('insanity');   // Твой новый шейдер
-});
+});function updateCount(modId) {
+    // Получаем текущее число из памяти браузера (или 0, если это первый раз)
+    let count = localStorage.getItem('count-' + modId) || 0;
+    
+    // Увеличиваем на 1
+    count++;
+    
+    // Сохраняем обратно в память
+    localStorage.setItem('count-' + modId, count);
+    
+    // Сразу обновляем цифру на экране
+    const element = document.getElementById('count-' + modId);
+    if (element) {
+        element.innerText = count;
+    }
+}
+
+// Эта часть кода срабатывает сразу при загрузке страницы
+// Она проверяет память и ставит сохраненные цифры вместо нулей
+window.onload = function() {
+    const mods = ['insanity']; // список ID твоих модов
+    mods.forEach(id => {
+        let savedCount = localStorage.getItem('count-' + id) || 0;
+        let element = document.getElementById('count-' + id);
+        if (element) element.innerText = savedCount;
+    });
+};
