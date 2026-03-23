@@ -21,7 +21,7 @@
 
     <header id="home" class="hero">
         <div class="hero-inner">
-            <h1 class="main-title">VAULT_01</h1>
+           <h1 class="main-title" id="typewriter"></h1>
             <p class="subtitle">Сайт для скачивания модов, которые я использую в своих видео.</p>
             <div class="status-bar">
                 <span class="status-node">SYSTEM: ONLINE</span>
@@ -31,8 +31,7 @@
     </header>
 
     <main class="content-wrapper">
-        
-       <section id="horror" class="mod-section">
+        <section id="horror" class="mod-section">
             <div class="section-header">
                 <h2 class="glitch-text" data-text="ERROR_HORROR">ERROR_HORROR</h2>
                 <div class="line red-line"></div>
@@ -44,12 +43,18 @@
                     <div class="card-info">
                         <span class="mod-id">#ID_001</span>
                         <h3>Split Self</h3>
-                        <p>Ваше сознание разделяется. Жуткая копия вашего персонажа начинает преследовать вас, повторяя ваши движения и выжидая момент для удара. Использовал в ролике "Я не один".</p>
+                        <p>Ваше сознание разделяется. Жуткая копия вашего персонажа начинает преследовать вас, повторяя ваши движения и выжидая момент для удара.</p>
                         <div class="card-footer">
                             <span class="version">1.21.1 // Fabric</span>
-                            <a href="https://modrinth.com/mod/split-self" class="dl-link" target="_blank">GET_DATA // Modrinth</a>
+                            <div class="stats" style="font-family: 'Syncopate', sans-serif; font-size: 0.7rem; color: var(--red); opacity: 0.8;">
+                                <span id="count-split-self">0</span> ⬇
+                            </div>
+                            <a href="https://modrinth.com/mod/split-self" class="dl-link" target="_blank" onclick="updateCount('split-self')">GET_DATA // Modrinth</a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
                 </div>
                 </div>
         </section>
