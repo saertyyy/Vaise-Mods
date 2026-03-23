@@ -2,12 +2,18 @@
     --bg: #050505;
     --red: #ff003c;
     --blue: #00f2ff;
-    --green: #00ff88; 
+    --green: #00ff88;
     --text: #ffffff;
     --font-main: 'Oswald', sans-serif;
     --font-accent: 'Syncopate', sans-serif;
 }
-* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
 body {
     background-color: var(--bg);
@@ -18,44 +24,74 @@ body {
 
 /* Эффект шума */
 .noise-overlay {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: url('https://grainy-gradients.vercel.app/noise.svg');
-    opacity: 0.04; pointer-events: none; z-index: 1000;
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 1000;
 }
 
 /* Навигация */
 .navbar {
-    position: fixed; top: 0; width: 100%; padding: 20px;
-    background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); z-index: 900;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 900;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.nav-links { display: flex; justify-content: space-around; align-items: center; max-width: 1200px; margin: 0 auto; }
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-.nav-item { text-decoration: none; color: #666; font-family: var(--font-accent); font-size: 0.8rem; letter-spacing: 2px; transition: 0.3s; }
-.nav-item:hover { color: #fff; }
-.logo { color: #fff; font-size: 1.2rem; font-weight: 700; border: 1px solid #fff; padding: 5px 15px; }
+.nav-item {
+    text-decoration: none;
+    color: #666;
+    font-family: var(--font-accent);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
 
-/* Hero */
-/* Найди этот блок в style.css */
+.nav-item:hover {
+    color: #fff;
+}
+
+.logo {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border: 1px solid #fff;
+    padding: 5px 15px;
+}
+
+/* Hero Секция с новым фоном */
 .hero {
-    min-height: 100vh; /* Высота на весь экран */
+    min-height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    
-    /* === ВОТ ЭТУ ЧАСТЬ ЗАМЕНИ НА КОД НИЖЕ === */
-    background-image: url('vault01.png'); /* Путь к твоему новому фону */
-    background-size: cover; /* Чтобы картинка растягивалась на весь экран */
-    background-position: center center; /* Чтобы персонаж был по центру */
-    background-repeat: no-repeat; /* Чтобы фон не дублировался */
-    background-attachment: fixed; /* Добавит крутой эффект параллакса при скролле */
-    /* ======================================= */
+    background-image: url('vault01.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-/* Рекомендую также добавить затемнение, чтобы текст читался лучше */
+/* Затемнение фона для читаемости текста */
 .hero::before {
     content: '';
     position: absolute;
@@ -63,88 +99,203 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Полупрозрачное черное наложение */
-    z-index: 1; /* Плитка поверх фона, но под текстом */
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
-/* Убедись, что контент (текст) находится поверх наложения */
 .hero-inner {
     position: relative;
-    z-index: 2; /* Поверх ::before */
-    /* ... остальные твои стили ... */
+    z-index: 2;
+    text-align: center;
 }
 
-.main-title { font-family: var(--font-accent); font-size: clamp(3rem, 10vw, 6rem); letter-spacing: -2px; }
-.subtitle { color: #666; font-size: 1rem; margin-top: 10px; text-transform: uppercase; letter-spacing: 1px; }
+.main-title {
+    font-family: var(--font-accent);
+    font-size: clamp(3rem, 10vw, 6rem);
+    letter-spacing: -2px;
+}
 
-/* Секции */
-.content-wrapper { max-width: 1200px; margin: 0 auto; padding: 100px 20px; }
+.subtitle {
+    color: #aaa;
+    font-size: 1rem;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
-.section-header { margin-bottom: 50px; }
-.line { height: 2px; width: 50px; margin-top: 10px; }
-.red-line { background: var(--red); box-shadow: 0 0 10px var(--red); }
-.blue-line { background: var(--blue); box-shadow: 0 0 10px var(--blue); }
+/* Контент и Секции */
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    position: relative;
+    z-index: 10;
+}
 
-/* Карточки */
-.mod-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 40px; }
+.section-header {
+    margin-bottom: 50px;
+}
+
+.line {
+    height: 2px;
+    width: 50px;
+    margin-top: 10px;
+}
+
+.red-line {
+    background: var(--red);
+    box-shadow: 0 0 10px var(--red);
+}
+
+.blue-line {
+    background: var(--blue);
+    box-shadow: 0 0 10px var(--blue);
+}
+
+.green-line {
+    background: var(--green);
+    box-shadow: 0 0 10px var(--green);
+}
+
+/* Сетки и Карточки */
+.mod-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 40px;
+}
 
 .mod-card {
-    background: #0a0a0a; border: 1px solid #1a1a1a;
-    transition: 0.4s; position: relative;
+    background: #0a0a0a;
+    border: 1px solid #1a1a1a;
+    transition: 0.4s;
+    position: relative;
 }
 
-.mod-card:hover { border-color: #444; transform: translateY(-10px); }
-
-.card-image { height: 200px; background-size: cover; background-position: center; filter: grayscale(100%); transition: 0.5s; }
-.mod-card:hover .card-image { filter: grayscale(0%); }
-
-.card-info { padding: 25px; }
-.mod-id { font-size: 0.7rem; color: #444; font-family: var(--font-accent); }
-.card-info h3 { margin: 10px 0; letter-spacing: 1px; }
-.card-info p { color: #888; font-size: 0.9rem; line-height: 1.5; }
-
-.card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; }
-.dl-link { 
-    text-decoration: none; color: #fff; font-size: 0.8rem; border: 1px solid #333; 
-    padding: 8px 15px; transition: 0.3s; 
+.mod-card:hover {
+    border-color: #444;
+    transform: translateY(-10px);
 }
 
-/* Индивидуальные ховеры */
-.horror:hover { border-color: var(--red); box-shadow: 0 0 30px rgba(255, 0, 60, 0.1); }
-.visual:hover { border-color: var(--blue); box-shadow: 0 0 30px rgba(0, 242, 255, 0.1); }
-.horror:hover .dl-link { background: var(--red); border-color: var(--red); }
-.visual:hover .dl-link { background: var(--blue); border-color: var(--blue); }
+.card-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
+    transition: 0.5s;
+}
+
+.mod-card:hover .card-image {
+    filter: grayscale(0%);
+}
+
+.card-info {
+    padding: 25px;
+}
+
+.mod-id {
+    font-size: 0.7rem;
+    color: #444;
+    font-family: var(--font-accent);
+}
+
+.card-info h3 {
+    margin: 10px 0;
+    letter-spacing: 1px;
+}
+
+.card-info p {
+    color: #888;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.dl-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.8rem;
+    border: 1px solid #333;
+    padding: 8px 15px;
+    transition: 0.3s;
+}
+
+/* Ховер-эффекты для разных категорий */
+.horror:hover {
+    border-color: var(--red);
+    box-shadow: 0 0 30px rgba(255, 0, 60, 0.1);
+}
+
+.horror:hover .dl-link {
+    background: var(--red);
+    border-color: var(--red);
+}
+
+.visual:hover {
+    border-color: var(--blue);
+    box-shadow: 0 0 30px rgba(0, 242, 255, 0.1);
+}
+
+.visual:hover .dl-link {
+    background: var(--blue);
+    border-color: var(--blue);
+}
+
+.shaders:hover {
+    border-color: var(--green);
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.1);
+}
+
+.shaders:hover .dl-link {
+    background: var(--green);
+    border-color: var(--green);
+    color: #000;
+}
+
+/* Свечение заголовков */
+.visual-glow {
+    color: var(--blue);
+    text-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
+}
+
+.shaders-glow {
+    color: var(--green);
+    text-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+}
+
+/* Навигация: ховеры */
+.color-horror:hover {
+    color: var(--red);
+    text-shadow: 0 0 10px var(--red);
+}
+
+.color-visual:hover {
+    color: var(--blue);
+    text-shadow: 0 0 10px var(--blue);
+}
+
+.color-shaders:hover {
+    color: var(--green);
+    text-shadow: 0 0 10px var(--green);
+}
 
 /* Кнопка наверх */
 #backToTop {
-    position: fixed; bottom: 40px; right: 40px; background: transparent; 
-    border: 1px solid #333; color: #fff; padding: 10px; cursor: pointer; display: none;
-    font-family: var(--font-accent); font-size: 0.6rem;
-}/* Цвет для ссылки в навигации */
-.color-shaders:hover { 
-    color: var(--green); 
-    text-shadow: 0 0 10px var(--green); 
-}
-
-/* Линия под заголовком */
-.green-line { 
-    background: var(--green); 
-    box-shadow: 0 0 10px var(--green); 
-}
-
-/* Свечение текста заголовка */
-.shaders-glow { 
-    color: var(--green); 
-    text-shadow: 0 0 15px rgba(0, 255, 136, 0.3); 
-}/* Наведение на карточку шейдеров */
-.shaders:hover { 
-    border-color: var(--green); 
-    box-shadow: 0 0 30px rgba(0, 255, 136, 0.1); 
-}
-
-/* Кнопка внутри карточки шейдеров */
-.shaders:hover .dl-link { 
-    background: var(--green); 
-    border-color: var(--green); 
-    color: #000; /* Черный текст на зеленом фоне при наведении */
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background: transparent;
+    border: 1px solid #333;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    display: none;
+    font-family: var(--font-accent);
+    font-size: 0.6rem;
+    z-index: 1001;
 }
