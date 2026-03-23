@@ -37,9 +37,41 @@ body {
 .logo { color: #fff; font-size: 1.2rem; font-weight: 700; border: 1px solid #fff; padding: 5px 15px; }
 
 /* Hero */
+/* Найди этот блок в style.css */
 .hero {
-    height: 100vh; display: flex; align-items: center; justify-content: center;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    min-height: 100vh; /* Высота на весь экран */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+    /* === ВОТ ЭТУ ЧАСТЬ ЗАМЕНИ НА КОД НИЖЕ === */
+    background-image: url('vault01.png'); /* Путь к твоему новому фону */
+    background-size: cover; /* Чтобы картинка растягивалась на весь экран */
+    background-position: center center; /* Чтобы персонаж был по центру */
+    background-repeat: no-repeat; /* Чтобы фон не дублировался */
+    background-attachment: fixed; /* Добавит крутой эффект параллакса при скролле */
+    /* ======================================= */
+}
+
+/* Рекомендую также добавить затемнение, чтобы текст читался лучше */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Полупрозрачное черное наложение */
+    z-index: 1; /* Плитка поверх фона, но под текстом */
+}
+
+/* Убедись, что контент (текст) находится поверх наложения */
+.hero-inner {
+    position: relative;
+    z-index: 2; /* Поверх ::before */
+    /* ... остальные твои стили ... */
 }
 
 .main-title { font-family: var(--font-accent); font-size: clamp(3rem, 10vw, 6rem); letter-spacing: -2px; }
