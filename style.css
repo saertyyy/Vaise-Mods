@@ -43,7 +43,66 @@ body {
     pointer-events: none;
     z-index: 1000;
 }
+/* --- Стили для эффекта битых пикселей --- */
 
+/* Контейнер для пикселей (поверх фона, под контентом) */
+.dead-pixels {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10; /* Прямо над фоном, под контентом */
+    pointer-events: none; /* Чтобы можно было кликать сквозь них */
+}
+
+/* Общий стиль для каждого битого пикселя */
+.pixel {
+    position: absolute;
+    width: 2px; /* Крошечный размер */
+    height: 2px;
+    border-radius: 50%; /* Сделаем их слегка округлыми, как настоящие */
+    opacity: 0; /* Изначально скрыты */
+    filter: blur(0.5px); /* Легкое размытие для реализма */
+    animation: deadPixelFlicker 15s infinite; /* Применяем анимацию мерцания */
+}
+
+/* --- Случайное расположение и цвета для нескольких пикселей --- */
+
+/* Пиксель №1 (Красный - Horror) */
+.pixel:nth-child(1) {
+    top: 15%; left: 23%;
+    background-color: var(--red);
+    animation-delay: 2s; /* Зажигается в разное время */
+}
+
+/* Пиксель №2 (Бирюзовый - Visual) */
+.pixel:nth-child(2) {
+    top: 48%; left: 71%;
+    background-color: var(--blue);
+    animation-delay: 5s;
+}
+
+/* Пиксель №3 (Зеленый - Shaders) */
+.pixel:nth-child(3) {
+    top: 82%; left: 14%;
+    background-color: var(--green);
+    animation-delay: 8s;
+}
+
+/* Пиксель №4 (Белый - Старый терминал) */
+.pixel:nth-child(4) {
+    top: 33%; left: 88%;
+    background-color: var(--text);
+    animation-delay: 11s;
+}
+
+/* Добавим еще пару для густоты (Красный) */
+.pixel:nth-child(5) {
+    top: 60%; left: 45%;
+    background-color: var(--red);
+    animation-delay: 1s;
+}
 /* Слой сканирующих линий (старый монитор) */
 body::after {
     content: "";
@@ -587,4 +646,17 @@ body::before {
     background: radial-gradient(circle, transparent 50%, rgba(0,0,0,0.4) 100%);
     z-index: 9998; /* Чуть ниже луча и шума */
     pointer-events: none;
+}/* Анимация для эффекта битых пикселей */
+@keyframes deadPixelFlicker {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    5%, 15% {
+        opacity: 1; /* Пиксель зажигается */
+        transform: scale(1.1); /* Слегка пульсирует */
+    }
+    10%, 20% {
+        opacity: 0.8;
+    }
 }
