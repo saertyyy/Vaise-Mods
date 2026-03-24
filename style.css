@@ -279,7 +279,11 @@ body {
     background: var(--red);
     border-color: var(--red);
 }
-
+/* Цвет и свечение для заголовка секции Horror */
+.horror-glow {
+    color: var(--red);
+    text-shadow: 0 0 15px rgba(255, 0, 60, 0.5);
+}
 .visual:hover {
     border-color: var(--blue);
     box-shadow: 0 0 30px rgba(0, 242, 255, 0.1);
