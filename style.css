@@ -44,6 +44,49 @@ body {
     z-index: 1000;
 }
 
+/* Слой сканирующих линий (старый монитор) */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%,
+            rgba(0, 0, 0, 0.1) 50%);
+    background-size: 100% 4px;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+/* Бегущий луч сканирования */
+.scan-beam {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom,
+            transparent,
+            rgba(0, 242, 255, 0.05),
+            transparent);
+    z-index: 10000;
+    pointer-events: none;
+    animation: scanline 8s linear infinite;
+}
+
+/* Анимация движения луча */
+@keyframes scanline {
+    0% {
+        transform: translateY(-100vh);
+    }
+
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
 /* Навигация */
 .navbar {
     position: fixed;
@@ -522,4 +565,26 @@ body::before {
         opacity: 0.6;
         text-shadow: none;
     }
+}
+
+/* Анимация движения полос сканирования */
+@keyframes scanline {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(100%);
+    }
+}/* Эффект виньетки (затемнение углов) */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 50%, rgba(0,0,0,0.4) 100%);
+    z-index: 9998; /* Чуть ниже луча и шума */
+    pointer-events: none;
 }
