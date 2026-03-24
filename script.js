@@ -109,4 +109,20 @@ if (cursor) {
         t.addEventListener('mouseenter', () => cursor.classList.add('active'));
         t.addEventListener('mouseleave', () => cursor.classList.remove('active'));
     });
-}
+}// === АНИМАЦИЯ ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ ===
+const revealCallback = (entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            // Если хочешь, чтобы анимация сработала только один раз, раскомментируй строку ниже:
+            // observer.unobserve(entry.target);
+        }
+    });
+};
+
+const revealObserver = new IntersectionObserver(revealCallback, {
+    threshold: 0.1 // Анимация начнется, когда 10% элемента будет видно
+});
+
+// Запускаем слежку за всеми элементами с классом reveal
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
