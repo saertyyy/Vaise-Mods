@@ -211,6 +211,7 @@ body {
     border: 1px solid #1a1a1a;
     transition: 0.4s;
     position: relative;
+    overflow: hidden;
 }
 
 .mod-card:hover {
@@ -228,6 +229,7 @@ body {
 
 .mod-card:hover .card-image {
     filter: grayscale(0%);
+    transform: scale(1.1);
 }
 
 .card-info {
