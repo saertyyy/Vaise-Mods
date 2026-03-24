@@ -90,14 +90,17 @@ body {
     min-height: 100vh;
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     position: relative;
     background-image: url('vault01.png');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    
 }
 
 /* Затемнение фона для читаемости текста */
@@ -117,6 +120,19 @@ body {
     z-index: 1; /* Фон будет внизу */
     background-size: cover;
     background-position: center;
+}/* Стили для центрирования и свечения надписей под заголовком */
+.hero p, .status-bar {
+    margin: 15px auto;
+    z-index: 2; 
+    color: #aaa;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2); 
+    display: block;
+}
+
+/* Свечение для бирюзового текста LOCATION: VAULT_01 */
+.status-bar span {
+    color: var(--blue);
+    text-shadow: 0 0 15px rgba(0, 242, 255, 0.6);
 }
 
 .main-title {
