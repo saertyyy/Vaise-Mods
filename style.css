@@ -283,6 +283,7 @@ body {
 .horror-glow {
     color: var(--red);
     text-shadow: 0 0 15px rgba(255, 0, 60, 0.5);
+    animation: flickering 7s infinite;
 }
 .visual:hover {
     border-color: var(--blue);
@@ -309,11 +310,13 @@ body {
 .visual-glow {
     color: var(--blue);
     text-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
+    animation: flickering 5s infinite;
 }
 
 .shaders-glow {
     color: var(--green);
     text-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+    animation: flickering 6s infinite;
 }
 
 /* Навигация: ховеры */
@@ -458,4 +461,13 @@ body::before {
 .no-js .reveal {
     opacity: 1;
     transform: translateY(0);
+}@keyframes flickering {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        opacity: 1;
+        text-shadow: 0 0 15px currentColor;
+    }
+    20%, 24%, 55% {
+        opacity: 0.6;
+        text-shadow: none;
+    }
 }
